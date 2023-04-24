@@ -1,3 +1,4 @@
+//Menu
 class Menu(private val items: List<String>) {
     fun show() {
         items.forEachIndexed { index, item ->

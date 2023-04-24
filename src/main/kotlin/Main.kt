@@ -1,4 +1,5 @@
-fun main() {
+//Main
+fun main() { //main
     val archives = mutableListOf<Archive>()
 
     while (true) {
