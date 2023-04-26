@@ -1,4 +1,5 @@
 fun main() {
+
     val archives = mutableListOf<Archive>()
 
     while (true) {
@@ -8,7 +9,7 @@ fun main() {
 
         if (choice == 0) {
             println("Введите название архива:")
-            val name = readLine() ?: ""
+            val name = readlnOrNull() ?: ""
             archives.add(Archive(name))
         } else if (choice == archives.size + 1) {
             break
@@ -27,7 +28,7 @@ fun main() {
                     val note = archive.notes[noteChoice - 1]
                     println(note.text)
                     println("Нажмите 'Enter' чтобы вернуться к списку заметок")
-                    readLine()
+                    readlnOrNull()
                 }
             }
         }

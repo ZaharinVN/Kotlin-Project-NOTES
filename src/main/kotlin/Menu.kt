@@ -7,12 +7,12 @@ class Menu(private val items: List<String>) {
     }
 
     fun readInput(): Int {
-        val input = readLine()
+        val input = readlnOrNull()
         val choice = input?.toIntOrNull()
         if (choice == null) {
             println("Введите корректный пункт меню!")
             return readInput()
-        } else if (choice !in 0 until items.size) {
+        } else if (choice !in items.indices) {
             println("Такого пункта меню нет!")
             return readInput()
         }
