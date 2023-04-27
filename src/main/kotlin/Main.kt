@@ -9,7 +9,13 @@ fun main() {
 
         if (choice == 0) {
             println("Введите название архива:")
-            val name = readlnOrNull() ?: ""
+            var name: String? = null
+            while (name.isNullOrEmpty()) {
+                name = readLine()
+                if (name.isNullOrEmpty()) {
+                    println("Ошибка: название архива не может быть пустым")
+                }
+            }
             archives.add(Archive(name))
         } else if (choice == archives.size + 1) {
             break
